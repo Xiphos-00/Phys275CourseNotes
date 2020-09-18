@@ -14,13 +14,133 @@
 \pagestyle{fancy}
 \fancyhf{}
 
-\rhead{Ivan Sharankov}
-\lhead{20665807}
-\chead{Phys 275 Group Assignemnt 1}
+\rhead{Phys 275 }
+\lhead{\thepage}
+\chead{Group 19}
 
 \begin{document}
+	\title{\textbf{Phys 275 Group Assignment 1}}
+	\date{\today}
+	\author{Group 19}
+	\maketitle
+	
+	\newpage
+	\section{Summary}
+	
+	\newpage
+	\section{Further Investigation}
+	
+	\newpage
+	\section{Question}
+	
+	\newpage
+	\section{Chapter Problems}
+	\begin{enumerate}
+		\item  \textbf{[Q 2.1] A baseball pitcher can throw a fastball at a speed of ~ 150 km/hr. What is the largest size spherical asteroid of density $\rho = 3000$ kg $m^{-3}$ from which he can throw the ball fast enough that it:} 
+		\begin{enumerate}
+			\item  \textbf{escapes from the asteroid into heliocentric orbit?}
+			
+			A velocity of 150 km/h is equivalent to $41.66\bar{6}$ m/s. Also not that $M = \rho V = \rho \frac{4}{3} \pi r^3$. We find the Kinetic Energy by:
+			\[ \text{KE} = \frac{1}{2} mv^2 \]
+			And the potential energy as 
+			\[ \text{PE} = \frac{GMm}{r} \]
+			Equating these we find:
+			\begin{align*}
+				\frac{1}{2} mv^2 &= \frac{GMm}{r} \\
+				\frac{1}{2} v^2 &= \frac{G \left( \rho \cdot \frac{4}{3} \pi r^3 \right)}{r} \\
+				v^2 &=  \frac{8}{3} G \rho \pi r^2 \\
+				r^2 &= \frac{3 v^2}{8 G \rho \pi} \\
+				\therefore r &= \sqrt{\frac{3 v^2}{8 G \rho \pi}} 
+			\end{align*}
+			\begin{align*}
+				r &= \sqrt{\frac{3 41.666^2}{8 G (3000) \pi}} \\
+				r &= 32 287 \text{ m} \\
+				\therefore r &= 32.3 Km
+			\end{align*}
+			\item  \textbf{rises to a height of 50 km?}
+			\item  \textbf{goes into a stable orbit about the asteroid?}
+		\end{enumerate}
+		
+		
+		
+		
+		\newpage 
+		\item  \textbf{ [Q 2-7] A small planet travels about a star with an orbital semimajor axis equal to 1 in the units chosen. Calculate the locations of the 2:1, 3:2, 99:98 and 100:99 resonances of test particles with the planet.}
+		
+		This can be solved using only Kepler's Third law, which tells us 
+		\[P^2 = a^3 \]
+		Computing the resonances of the test particles with planet can be done by simply taking the ratio of Kepler's Third law for the two given locations of the bodies, giving us:
+		\[ \frac{P_1^2}{P_2^2} = \frac{a_1^3}{a_2^3} \]
+		Since we chose the orbital semimajor axis to be 1, we can equate that to $a_2 = 1$, which we can rearrange for $a_1$ as follows:
+		
+		\begin{align*}
+			\frac{P_1^2}{P_2^2} &= \frac{a_1^3}{1^3} \\
+			\frac{P_1^2}{P_2^2} &= a_1^3 \\
+			\therefore a_1 &= \sqrt[\uproot{3}\scriptstyle 3]{\frac{P_1^2}{P_2^2}}
+		\end{align*}
+		
+		Now we can simply plug in the ratios of $\displaystyle \frac{P_1}{P_2}$. Note: this is the number of revolutions the test particle will do with the small planet.
+		
+		\begin{align*}
+			\text{for 2:1} \quad \longrightarrow \quad a_1 &= \sqrt[\uproot{3}\scriptstyle 3]{\frac{2^2}{1^2}} \; = \sqrt[\uproot{3}\scriptstyle 3]{\frac{4}{1}} \hspace{26px} = 1.58740105 \\ 
+			%
+			\text{for 3:2} \quad \longrightarrow \quad a_1 &= \sqrt[\uproot{3}\scriptstyle 3]{\frac{3^2}{2^2}} \; = \sqrt[\uproot{3}\scriptstyle 3]{\frac{9}{4}} \hspace{26px} = 1.31037070 \\ 
+			%
+			\text{for 99:98} \quad \longrightarrow \quad a_1 &= \sqrt[\uproot{3}\scriptstyle 3]{\frac{99^2}{98^2}} = \sqrt[\uproot{3}\scriptstyle 3]{\frac{9801}{9604}} \hspace{10px} = 1.00338986 \\ 
+			%
+			\text{for 100:99} \quad \longrightarrow \quad a_1 &= \sqrt[\uproot{3}\scriptstyle 3]{\frac{100^2}{99^2}} = \sqrt[\uproot{3}\scriptstyle 3]{\frac{10000}{9801}} = 1.0033557\\ 
+			%
+		\end{align*}
+		
+		
+		
+		\newpage
+		\item [Q 2.12] \textbf{If the Earth-Moon distance was reduced to half its current value then: }
+		\begin{enumerate}
+			\item \textbf{Neglecting solar tides, how many times as large as at present would the maximum tide heights on Earth be?}
+			
+			We will start by assuming the average distance between the Earth and Moon, not at apogee and perigee. The average distance between the Earth and Moon is $3.84402\times 10^8$. We must first find the current average tidal forces exerted by the Moon. To do this, we can recall that:
+			\[ F = \frac{GMm}{r^2} \]
+			We can find the tidal force by taking the derivative of this and multiplying it by $-R$:
+			\[ F_T = -R \dv{F}{r} = \frac{2RGMm}{r^3} \]
+			
+			Where R is the radius of the Earth, M is the mass of the Earth, m is the mass of the moon, and r is the distance the moon is at. With this, we can sub in the current mood distance to find:
+			\begin{align*}
+				F_T &= \frac{2GRMm}{r^3} \\
+				&= \frac{2G \times 6378137 \times 5.9736 \times 10^{24} \times 7.3477 \times 10^{22}}{(3.844 \times 10^8)^3} \\
+				&= 6.5315 \times 10^{18} \text{ N}
+			\end{align*}
+			
+			Now we must simply do this again, but with a Earth-Moon distance of half the current value. This comes out to $1.922 \times 10^8$ meters. Repeating, we find:
+			\begin{align*}
+			F_T &= \frac{2GRMm}{r^3} \\
+			&= \frac{2G \times 6378137 \times 5.9736 \times 10^{24} \times 7.3477 \times 10^{22}}{(1.922 \times 10^8)^3} \\
+			&= 5.2251 \times 10^{19} \text{ N}
+			\end{align*}
+			
+			The difference between these two distances is roughly 12.42\%. At first this seems much to small for an increase when halfing the Earth-Moon distance, but we must recall that since we have $\frac{1}{r^3}$, we should expect such an outcome. Recall:
+			\begin{align*}
+				\frac{F_\frac{1}{2}}{F_1} = \left( \frac{3.844 \times 10^8}{1.922 \times 10^8}\right)^3 = 2^3 = 8
+			\end{align*}
+			Therefore $F_1 = \frac{1}{8} F_\frac{1}{2}$, or 0.125, which is very close to out 12.4\% found above.
+			
+			\item  \textbf{Including solar tides, how many times as large as at present would the maximum tide heights on Earth be?}
+			 
+			We find the solar tides to be:
+			\begin{align*}
+				F_T &= \frac{2GRMm}{r^3} \\
+				&= \frac{2G \times 6378137 \times 1.989 \times 10^{30} \times 5.9736 \times 10^{24}}{(1.4959 \times 10^11)^3} \\
+				&= 3.000119 \times 10^{18} \text{ N}
+			\end{align*}
+			Adding this value to both $T_F$'s found above gets us $9.5315 \times 10{18}$ for the current Earth-Moon distance, and $5.5251\times 10^{19}$ N for the halfed Earth-Moon distance. The difference between these two forces accounting for solar tides is then 17.25\%.
+			
+		\end{enumerate}
+	
+	\newpage
+	\item \textbf{[Q 4.4] Sedna is a minor planet that orbits far beyond the orbit of Pluto. It is difficult to measure the radius of a small, distant Solar System object because optical imaging only constrains $AR^2$ , the product of the square of the radius and the albedo (so for a given brightness, you do not know if the object is big but dark or small and bright). However, Sedna was also observed with the Spitzer Space Telescope, which measured the total flux emitted by Sedna in the infrared. Explain, using the appropriate equation, why this measurement allows the radius to be measured.}
+	
+	Since the Spitzer Space telescope measured the total flux emitted by Sedna in the infrared, we can find the total flux using the stephan boltzmann equation, $F = \sigma T^4$. Once we have this, we can then easily find the radius of Sedna with the provided constrains of $AR^2$
 	
 	
-	
-	Group assignment base document.
+	\end{enumerate}
 \end{document}
