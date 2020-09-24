@@ -24,19 +24,20 @@
 	\author{Group 19}
 	\maketitle
 	
+	
 	\newpage
 	\section{Summary}
-	
+
 	\newpage
 	\section{Further Investigation}
-	
+
 	\newpage
 	\section{Question}
-	
+
 	\newpage
 	\section{Chapter Problems}
 	\begin{enumerate}
-		\item  \textbf{[Q 2.1] A baseball pitcher can throw a fastball at a speed of ~ 150 km/hr. What is the largest size spherical asteroid of density $\rho = 3000$ kg $m^{-3}$ from which he can throw the ball fast enough that it:} 
+		\item  \textbf{[Q 2.1] A baseball pitcher can throw a fastball at a speed of ~ 150 km/hr. What is the largest size spherical asteroid of density $\rho = 3000$ kg $\text{m}^{-3}$ from which he can throw the ball fast enough that it:} 
 		\begin{enumerate}
 			\item  \textbf{escapes from the asteroid into heliocentric orbit?}
 			
@@ -53,12 +54,30 @@
 				\therefore r &= \sqrt{\frac{3 v^2}{8 G \rho \pi}} 
 			\end{align*}
 			\begin{align*}
-				r &= \sqrt{\frac{3 41.666^2}{8 G (3000) \pi}} \\
+				r &= \sqrt{\frac{3}{8}\frac{41.666^2}{G \cdot 3000 \cdot \pi}} \\
 				r &= 32 287 \text{ m} \\
 				\therefore r &= 32.3 \ \text{km}
 			\end{align*}
 			\item  \textbf{rises to a height of 50 km?}
+
+			The total initial energy is
+			\[ \text{E}_i = \frac{1}{2}mv_0^2 - \frac{GMm}{r} \]
+			The ball has $v$=0 m/s at the top of the trajectory, so the energy at a height of $h$=50km is
+			\[ \text{E}_f = -\frac{GMm}{r + h} \]
+			equating these (by conservation of energy),
+			\begin{align*}
+			    \frac{1}{2}mv_0^2 - \frac{GMm}{r} &= -\frac{GMm}{r+h}  \\
+			    \frac{1}{2}v_0^2 - \frac{GM}{r} &= -\frac{GM}{r+h} \\
+			    \frac{v_0^2}{2G} &= M\left(\frac{1}{r} - \frac{1}{r+h}\right) \\
+			    \frac{v_0^2}{2G} &= \frac{4}{3}\pi r^3 \left(\frac{1}{r} - \frac{1}{r+h}\right)\\
+			    \frac{3v_0^2}{8G\pi} &= r^3 \left(\frac{h}{r(r+h)}\right) \\
+			    \frac{3v_0^2}{8G\pi} &= \frac{hr^2}{r+h} \\
+			    0 &= hr^2 - \frac{3v_0^2}{8G\pi} r - \frac{3v_0^2}{8G\pi}h
+			\end{align*}
+			plugging in $h=50$m, $v_0 = 41.\bar{6}$m/s and using the quadratic formula, we get $r = 62,153$km
+			
 			\item  \textbf{goes into a stable orbit about the asteroid?}
+
 		\end{enumerate}
 		
 		
@@ -68,7 +87,7 @@
 		\item  \textbf{ [Q 2-7] A small planet travels about a star with an orbital semimajor axis equal to 1 in the units chosen. Calculate the locations of the 2:1, 3:2, 99:98 and 100:99 resonances of test particles with the planet.}
 		
 		This can be solved using only Kepler's Third law, which tells us 
-		\[P^2 = a^3 \]
+		\[P^2 = \frac{4\pi^2}{GM} a^3 \]
 		Computing the resonances of the test particles with planet can be done by simply taking the ratio of Kepler's Third law for the two given locations of the bodies, giving us:
 		\[ \frac{P_1^2}{P_2^2} = \frac{a_1^3}{a_2^3} \]
 		Since we chose the orbital semimajor axis to be 1, we can equate that to $a_2 = 1$, which we can rearrange for $a_1$ as follows:
@@ -99,7 +118,7 @@
 		\begin{enumerate}
 			\item \textbf{Neglecting solar tides, how many times as large as at present would the maximum tide heights on Earth be?}
 			
-			We will start by assuming the average distance between the Earth and Moon, not at apogee and perigee. The average distance between the Earth and Moon is $3.84402\times 10^8$. We must first find the current average tidal forces exerted by the Moon. To do this, we can recall that:
+			We will start by assuming the average distance between the Earth and Moon, not at apogee and perigee. The average distance between the Earth and Moon is $3.84402\times 10^8$. We will also assume that the height of the bulge is linearly proportional to the force applied (so we need only compare the tidal force in both scenarios). We must first find the current average tidal forces exerted by the Moon. To do this, we can recall that:
 			\[ F = \frac{GMm}{r^2} \]
 			We can find the tidal force by taking the derivative of this and multiplying it by $-R$:
 			\[ F_T = -R \dv{F}{r} = \frac{2RGMm}{r^3} \]
@@ -129,7 +148,7 @@
 			We find the solar tides to be:
 			\begin{align*}
 				F_T &= \frac{2GRMm}{r^3} \\
-				&= \frac{2G \times 6378137 \times 1.989 \times 10^{30} \times 5.9736 \times 10^{24}}{(1.4959 \times 10^11)^3} \\
+				&= \frac{2G \times 6378137 \times 1.989 \times 10^{30} \times 5.9736 \times 10^{24}}{(1.4959 \times 10^{11})^3} \\
 				&= 3.000119 \times 10^{18} \text{ N}
 			\end{align*}
 			Adding this value to both $T_F$'s found above gets us $9.5315 \times 10{18}$ for the current Earth-Moon distance, and $5.5251\times 10^{19}$ N for the halfed Earth-Moon distance. The difference between these two forces accounting for solar tides is then 17.25\%.
