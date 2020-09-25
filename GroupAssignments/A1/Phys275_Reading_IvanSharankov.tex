@@ -1,14 +1,23 @@
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 
 \usepackage[english]{babel}
 \usepackage{amssymb, bm, caption, csquotes, enumitem, fancyhdr, textcomp, textgreek, gensymb, geometry, graphicx, hyperref, mathrsfs, mathtools, multicol, physics, wrapfig, xcolor}
 \usepackage[makeroom]{cancel}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan,
+}
+
+\newcommand{\threestars}{\begin{center}$ {\ast}\,{\ast}\,{\ast} $\end{center}}
+
 %\renewcommand{\familydefault}{\lmdefault}
 %\usepackage{lmodern}
 % !TeX spellcheck = en_US 
 
-\geometry{left = 0.5cm, right = 1cm, bottom = 1.5cm, top = 2.0cm}
+\geometry{left = 2.54cm, right = 2.54cm, bottom = 1.5cm, top = 2.0cm}
 \linespread{1.2}
 
 \pagestyle{fancy}
@@ -28,11 +37,47 @@
 	\newpage
 	\section{Summary}
 
+Section 2.2.2 discussed two types of orbits that can be observed in a 3 body system. In the case where there is one large body with two smaller secondaries orbiting, we can observe what are called 'horseshoe' and 'tadpole' orbits if the semimajor axes of the secondaries are close enough. These orbits are observed in the reference frame rotating along with one of the secondaries and with the origin at the primary body. These orbits are created by the interaction between the two secondaries as they exchange energy on approach. Horseshoe orbits occur when the moving secondary (in the aforementioned reference frame) loses energy when it approaches the other secondary from a higher orbit and gains energy when it approaches from a lower one. This causes it to respectively move to a lower or higher orbit, which it remains in until the next approach. This creates a path that encircles the L3, L4, and L5 lagrangian points - which looks like a horseshoe. If instead this orbit only encompasses the L4 or L5 point, it forms a tadpole orbit.
+
+By observing the intensity of radiation coming from a body across different wavelengths, the resulting spectrum can tell us a lot not only about the chemical composition of the body, but also about the temperature of the body, and the makeup of its atmosphere. For bodies in our solar system, the process is as follows. The sun, as an extremely hot body, emits a continuous thermal spectrum (close to the blackbody spectrum for ~5800k). As this spectrum passes through the lower density outer layers of the sun, certain wavelengths are absorbed, creating the fraunhofer lines. This spectrum then must pass through the atmosphere (if any) of the body we are observing, reflect off its surface, and come through our atmosphere, which adds its own absorption lines. By ignoring the lines created by the sun and our own atmosphere, we might see additional absorption created by a certain material on a planet's surface. By integrating the spectrum over all frequencies, we can find its effective temperature, which is the temperature of a blackbody that would emit the same energy. If we compare this value to the equilibrium temperature we might be able to determine that the body has an internal heating source or is experiencing a strong greenhouse effect.
+
+The basics of the ideal gas law and the barometric law is good to fully understand the relationship both laws share with each other, and can provide us with valuable information about the pressure gradient on a planet. The textbook expanded on this topic by fully explaining how the barometric law can be derived from the ideal gas law by using derivatives and defining the scale height with
+\begin{equation}
+   H(z) = \frac{kT(z)}{g_p(z)\mu_a(z)m_{\text{amu}}}
+\end{equation}
+
+where $g_p(z)$ is the acceleration of gravity at altitude $z$, and $\mu_am_{\text{amu}}$ the molecular mass. This value tells us how quickly an atmosphere's pressure decreases with increasing altitude. In addition, it was stated that if the parameters $g_p$ (acceleration of gravity) $T$ (temperature), and $H$ (scale height, the distance over pressure decreasing by a factor of $e$) vary with increase/decrease of altitude, then the barometric needs to change to accommodate the difference.
+
 	\newpage
 	\section{Further Investigation}
+\begin{quote}
+    “I would also be interested in seeing some more case studies about how the various effects covered in these sections interact with each other. For example, the Io-Europa-Jupiter system was described in 2.7.3 where the horseshoe effect combined with tidal effects caused Io to heat up internally.”
+\end{quote}
+
+One interesting example is the Epimetheus-Janus-Saturn system. Epithemeus and Janus orbit Saturn and reach a minimum separation of about 15,000km\footnote{\url{https://solarsystem.nasa.gov/resources/13103/the-dancing-moons/}} (their semimajor axes are only ~50km away from each other). As a result, Epimetheus forms a horseshoe orbit viewed from Janus. Due to the timing and other properties of the system (they are also similar in mass and size), this results in the two moons effectively swapping orbits every 4 years. In this, they are unique in the solar system. The corresponding 7:6 resonance location for Janus maintains a sharp edge to Saturn’s A-Ring, and thus the periodic orbit swap keeps that ring intact, as Janus alternatingly sharpens the inner and outer edges\footnote{\url{https://arxiv.org/abs/1510.00434}}. In this system, we see the effects of resonance, lagrange points, and horseshoe orbits combine to form a visible relic in the rings of Saturn.
+
+This phenomena, where a moon's resonance confines the extent of a planetary ring, is called shepherding, and the moon is known as a shepherd moon. §13.4.3 of Lissauer discusses the phenomenon in some detail, noting plenty of other examples of this, such as Cordelia and Ophelia around Uranus, and Prometheus and Pandora around Saturn. In fact, §13.4 discusses ring-moon interactions in general, where the concepts of resonance, orbital systems (3 body systems in particular), and tidal effects are used to explain the structure of planetary rings.
+
+\threestars
+
+\begin{quote}
+    “When it comes to the two restrictions to Planck’s Radiation Law, the text did not give examples regarding what would happen if either of these two limits were exceeded. I wanted to know what kind of data would cause both these limitations to trigger thus providing more information regarding blackbody radiation.”
+\end{quote}
+
+The two limitations of Planck’s Radiation Law are Rayleigh-Jeans Law, when $hv << kT$ and Wien’s Law, where $hv >> kT$. When it comes to Wien's Law, it provides us the relationship\footnote{\url{https://aklectures.com/lecture/introduction-to-quantum-theory/wiens-law-example}} between wavelength and absolute temperature that emits radiation. Regarding Rayleigh-Jeans Law, it gives the relationship\footnote{\url{https://scienceworld.wolfram.com/physics/Rayleigh-JeansLaw.html}} between the intensity of radiation and absolute temperature. In terms of Planck’s Law and Rayleigh-Jeans Law, the latter gives us a better approximation on the correlation between $B_v(T)$ and $v(Hz)$. Furthermore, given that Planck’s law is similar to R-J law, it can be noted that the limit is approaching 0, however even with the increase of temperature the function cannot actually be equal to 0.
 
 	\newpage
 	\section{Question}
+	
+\begin{quote}
+    “I knew that the heat absorption of a planet equally balanced the heat loss for planets (otherwise we'd burn up or freeze). I was not aware that the gas giants in our solar system were still radiating much more heat than they were absorbing. I wonder if this is often the case with gas giants, or if our gas giants simply have not reached their equilibrium. If it's the latter, assuming the planets were made at relatively the same time (a big give-or-take here), why does it take the gas giants so much more time to stabilize and reach this equilibrium than the rocky inner planets? Does this have something to do with the properties of the gasses in the gas giants? Or maybe the mixing within these planets? It surprises me that the gas giants have not yet reached equilibrium, and I feel there's something missing in the test for why this is the case. What is this reason?”
+\end{quote}
+
+The textbook states: “The giant planets Jupiter, Saturn and Neptune are exceptions [to the rule that most planetary bodies radiate the same amount of energy as they absorb from the sun]. These bodies radiate significantly more energy than they absorb because they are still losing heat produced during the time of their formation.” (Lissauer, 88). Seeing as these planets are larger than the terrestrial planets, we might expect that they are able to radiate more power due to the increased surface size, and therefore reach equilibrium faster. The fact that they do not suggests that they might also have a much more powerful internal heat source, which makes sense since the larger size also entails a larger and hotter core.
+
+This is confirmed later in the textbook: “Jupiter, Saturn and Neptune each emit roughly twice as much energy as they receive from the Sun. The excess heat escaping from these planets is attributed to a slow cooling of the planets since their formation combined with energy release by He differentiation (§6.2.3)” (Lissauer, 117). Later, we find that “Helium differentiation is important to a lesser extent for Jupiter.” (Lissauer, 156), so it is likely that the larger size is the main factor for Jupiter’s ongoing cooling.
+
+Extrapolating, we can hypothesize that for a sufficient size and distance from the star, giant planets will continue to cool longer than smaller, solid planets closer to the star. This can also be explained mathematically by noting that the cooling process, radiation from the surface, is a function of the surface area over which this radiation can occur, i.e. $R^2$, while the heating processes (Helium differentiation, radioactive decay, heat of formation, etc.) are functions of the volume of the planet, i.e. of $R^3$.
 
 	\newpage
 	\section{Chapter Problems}
@@ -88,7 +133,7 @@
 		
 		This can be solved using only Kepler's Third law, which tells us 
 		\[P^2 = \frac{4\pi^2}{GM} a^3 \]
-		Computing the resonances of the test particles with planet can be done by simply taking the ratio of Kepler's Third law for the two given locations of the bodies, giving us:
+		Where $P$ is the orbital period, $a$ the semimajor axis, and $M$ the mass of the planet.\\ Computing the resonances of the test particles with planet can be done by simply taking the ratio of Kepler's Third law for the two given locations of the bodies, giving us:
 		\[ \frac{P_1^2}{P_2^2} = \frac{a_1^3}{a_2^3} \]
 		Since we chose the orbital semimajor axis to be 1, we can equate that to $a_2 = 1$, which we can rearrange for $a_1$ as follows:
 		
